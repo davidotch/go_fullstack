@@ -2,6 +2,7 @@ const express = require("express");
 
 const app = express();
 
+// Un middleware est un bloc de code qui traite les requêtes et réponses de votre application
 app.use((req, res, next) => {
    console.log("Requête reçue !");
    next();
