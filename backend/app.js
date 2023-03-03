@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+
 const stuffRoutes = require("./routes/stuff");
+const userRoutes = require("./routes/user");
 
 mongoose.set("strictQuery", true);
 mongoose
@@ -28,5 +30,6 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use("/api/stuff", stuffRoutes);
+app.use("/api/autj", userRoutes);
 
 module.exports = app;
