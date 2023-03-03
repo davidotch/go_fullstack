@@ -3,18 +3,7 @@ const router = express.Router();
 
 const Thing = require("../models/Thing");
 
-router.use((req, res, next) => {
-   res.setHeader("Access-Control-Allow-Origin", "*");
-   res.setHeader(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-   );
-   res.setHeader(
-      "Access-Control-Allow-Methods",
-      "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-   );
-   next();
-});
+
 
 router.put("/api/stuff/:id", (req, res, next) => {
    Thing.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
